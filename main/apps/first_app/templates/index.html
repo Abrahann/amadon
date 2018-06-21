@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Amadon</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>The Store</h1>
+        <form action='checkout' method='post'>
+            {% csrf_token %}
+            <div class="wrapper">
+                    <div class="item">
+                        <tr><th></th><th></th></tr>
+                        <strong>Item:</strong>
+                        <p>T-shirts</p>
+                        <p>Sweaters</p>
+                        <p> Coffee Mugs</p>
+                        <p>The Book</p>
+                    </div>
+                    <div class="item">
+                        <tr><th></th><th></th></tr>
+                        <strong>Price:</strong>
+                        <p>$19.99</p>
+                        <p>$29.99</p>
+                        <p>$39.99</p>
+                        <p>$49.99</p>
+                    </div>
+                    <div class="actions">
+                        <strong>Actions:</strong>
+                        <input type='hidden' name='price_tshirt' value='19.99' />
+                        <p><select name='quantity_tshirt'>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                        <input type='hidden' name='price_sweater' value='29.99' />
+                        <p><select name='quantity_sweater'>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select></p>
+                        <input type='hidden' name='price_cup' value='39.99' />
+                        <p><select name='quantity_cup'>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select></p>
+                        <input type='hidden' name='price_book' value='49.99' />
+                        <select name='quantity_book'>
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select><p></p>
+                        <input type='submit' value='Checkout!' />
+                    </form>
+                    </div> 
+            </div>
+    </body>
+</html>
